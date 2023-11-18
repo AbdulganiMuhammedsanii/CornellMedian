@@ -51,7 +51,76 @@ document.addEventListener('DOMContentLoaded', () => {
     loadUserProfiles('panel1');
     document.getElementById('GradeFilterpanel1').addEventListener('change', () => filterProfiles('panel1'));
     document.getElementById('CourseFilterpanel1').addEventListener('change', () => filterProfiles('panel1'));
-    document.getElementById('matchButton').addEventListener('click', Match);
+    document.getElementById('matchButton').addEventListener('click', function() {
+        document.getElementById('courseModal').style.display = 'block';
+    });
+
+    
+    // Function to show modal with fade-in effect
+    // Function to show modal with fade-in effect
+// script.js
+
+// ...existing code...
+
+// Function to show modal with fade-in effect
+function showModalWithFade(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.classList.add('show');
+    modal.style.display = 'flex'
+}
+
+// Function to hide modal with fade-out effect
+function hideModalWithFade(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 500); // Delay must match the CSS transition duration
+}
+
+// Modify the event listener for the matchButton
+document.getElementById('matchButton').addEventListener('click', function() {
+    showModalWithFade('courseModal');
+});
+
+// Modify the form submission event listener
+document.getElementById('courseForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Hide the course submission modal
+    hideModalWithFade('courseModal');
+
+    // Show the submission message
+    showModalWithFade('submissionMessage');
+
+    // Hide the submission message after a delay
+    setTimeout(() => {
+        hideModalWithFade('submissionMessage');
+    }, 1500); // 3 seconds
+});
+
+
+// Modify the event listener for the close button
+var span = document.getElementsByClassName("close")[0];
+if (span) {
+    span.onclick = function() {
+        hideModalWithFade('courseModal');
+    }
+}
+
+// Close the modal if clicked outside
+window.onclick = function(event) {
+    var modal = document.getElementById('courseModal');
+    if (event.target == modal) {
+        hideModalWithFade('courseModal');
+    }
+}
+
+// ...rest of the existing code...
+
+
+
+    
 });
 
 function loadUserProfiles(panelID) {
@@ -122,12 +191,14 @@ function loadUserProfiles(panelID) {
 }
 
 function Match() {
-    // Implement matching logic here
-    // This is a placeholder for demonstration
-    alert('Match functionality not implemented yet.');
+    // Toggle the display of the submission fields
+    var submissionFields = document.getElementById('courseFormPopup');
+    if (submissionFields.style.display === 'none') {
+        submissionFields.style.display = 'block';
+    } else {
+        submissionFields.style.display = 'none';
+    }
 }
-
-
 
 function selectProfile(profile, panelId) {
     // Deselect any previously selected profile in the same panel
@@ -156,7 +227,7 @@ function selectProfile(profile, panelId) {
     const credit = profile.getAttribute('data-credits')
     // Update the secondary panel with course details
     
-        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: ${descript}</p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
     
        
     
