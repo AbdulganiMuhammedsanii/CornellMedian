@@ -84,11 +84,38 @@
 
     <button id="matchButton">Submit Course</button>
 
+    <div id="submissionMessage" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Your submission will be reviewed.</h2>
+        </div>
+    </div>
+
+    <div id="courseModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="courseForm">
+                <label for="courseName">Course Name:</label>
+                <input type="text" id="courseName" name="courseName"><br><br>
+    
+                <label for="professor">Professor:</label>
+                <input type="text" id="professor" name="professor"><br><br>
+    
+                <label for="medianGrade">Median Grade:</label>
+                <input type="text" id="medianGrade" name="medianGrade"><br><br>
+    
+                <label for="semester">Semester:</label>
+                <input type="text" id="semester" name="semester"><br><br>
+    
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
 
 <!-- Your Custom JavaScript -->
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 <script src="script.js"></script>
-
+<script src="submission.js"></script>
 </body>
 </html>
