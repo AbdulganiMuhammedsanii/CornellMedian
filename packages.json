@@ -1,0 +1,16 @@
+{
+    "name": "cornellMedian",
+    "version": "1.0.0",
+    "description": "A brief description of your project",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "author": "Abdulgani",
+    "license": "ISC",
+    "dependencies": {
+      "firebase": "^9.0.0",
+      "puppeteer": "^13.0.0"
+    }
+  }
+  

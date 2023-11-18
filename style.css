@@ -1,0 +1,129 @@
+/* style.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+
+.panels-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Align children to the right */
+    gap: 20px;
+    margin-top: 20px;
+}
+.opening {
+    height: 100vh; /* 40% of the viewport height */
+    background-color: #f0f0f0; /* Light grey background, change as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opening h1 {
+    cursor: pointer; /* Indicates the title is clickable */
+}
+
+.panel {
+    justify-content: left;
+    width: 45%;
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.userProfile {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer; /* Indicates that profiles are clickable */
+}
+
+.userProfile:hover {
+    background-color: #f9f9f9; /* Hover effect for user profiles */
+}
+
+.selectedProfile {
+    border-left: 4px solid #000000;
+    background-color: #fff9f9;
+}
+
+#matchButton {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.userProfile img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover; /* This will ensure that the images are not stretched */
+    border-radius: 5px; /* Optional: for rounded corners */
+}
+.filter {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row; /* Make filter elements in a row */
+    align-items: center; /* Align items vertically center */
+}
+
+.filter label {
+    margin-right: 10px;
+    font-weight: 250;
+    font-size: 13px;
+    color: #333;
+}
+
+
+.filter select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+
+#slopeSection {
+    padding: 20px;
+    text-align: center;
+    background-color: #f2f2f2;
+    /* Other styling as per your aesthetic preference */
+}
+
+h2 {
+    margin-bottom: 15px;
+    /* Style your headings */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+#scrolltopanels {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}

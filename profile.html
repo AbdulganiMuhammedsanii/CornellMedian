@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+    <title>Slope</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class = "opening" id="slopeSection">
+        <h1 id="scrolltopanels">CornellMedian</h1>
+        <!-- Content for Slope section goes here -->
+    </div>
+    <div class="filter">
+        <label for="CourseFilterpanel1">Course: </label>
+        <select id="CourseFilterpanel1">
+            <option value="all">All</option>
+            <option value="AAS">AAS</option>
+            <option value="AEM">AEM</option>
+            <option value="AEP">AEP</option>
+            <option value="AMST">AMST</option>
+            <option value="ANSC">AAS</option>
+            <option value="ASTRO">AEM</option>
+            <option value="BEE">BEE</option>
+            <option value="BIOEE">BIOEE</option>
+            <option value="BIOG">BIOG</option>
+            <option value="BIOMG">BIOMG</option>
+            <option value="BIOMI">BIOME</option>
+            <option value="BME">BME</option>
+            <option value="BTRY">BTRY</option>
+            <option value="CHEM">CHEM</option>
+            <option value="CHEME">CHEME</option>
+            <option value="COMM">COMM</option>
+            <option value="CRP">CRP</option>
+            <option value="CS">CS</option>
+            <option value="EAS">EAS</option>
+            <option value="ECE">ECE</option>
+            <option value="ECON">ECON</option>
+            <option value="ENGRD">ENGRD</option>
+            <option value="ENGRI">ENGRI</option>
+            <option value="GERST">GERST</option>
+            <option value="GOVT">GOVT</option>
+            <option value="HADM">HADM</option>
+            <option value="HIST">HIST</option>
+            <option value="ILRLE">ILRLE</option>
+            <option value="ILRLR">ILRLR</option>
+            <option value="INFO">INFO</option>
+            <option value="MAE">MAE</option>
+            <option value="MATH">MATH</option>
+            <option value="MSE">MSE</option>
+            <option value="MUSIC">MUSIC</option>
+            <option value="NES">NES</option>
+            <option value="NS">NS</option>
+            <option value="NTRES">NTRES</option>
+            <option value="ORIE">ORIE</option>
+            <option value="PAM">PAM</option>
+            <option value="PHIL">PHIL</option>
+            <option value="PHYS">PHYS</option>
+            <option value="PSYCH">PSYCH</option>
+            <option value="SOC">SOC</option>
+            <option value="SPAN">SPAN</option>
+            <option value="STSCI">STSCI</option>
+            <option value="SPAN">SPAN</option>
+            <option value="STSCI">STSCI</option>
+        </select>
+    <div class="filter">
+        <label for="GradeFilterpanel1">Grade: </label>
+        <select id="GradeFilterpanel1">
+            <option value="all">All</option>
+            <option value="A">A-/A/A+</option>
+            <option value="B">B-/B/B+</option>
+            <option value="C">C-/C/C+</option>
+        </select>
+    </div>
+
+    </div>
+    <div class="panels-wrapper">
+        <div class="panel" id="panel1"></div>
+        <div class="panel" id="panel2" hidden></div>
+
+        
+    </div>
+
+    <button id="matchButton">Submit Course</button>
+
+
+<!-- Your Custom JavaScript -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
