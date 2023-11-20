@@ -158,6 +158,9 @@ function loadUserProfiles(panelID) {
         userProfile.setAttribute('data-students', childData.NumberStudents);
         userProfile.setAttribute('data-distribution', childData.distribution);
         userProfile.setAttribute('data-credits', childData.credits);
+        userProfile.setAttribute('data-prelim1', childData.prelim1);
+        userProfile.setAttribute('data-prelim2', childData.prelim2);
+        userProfile.setAttribute('data-prelim3', childData.prelim3);
         userProfiles.appendChild(userProfile);
 
         userProfile.addEventListener('click', function() {
@@ -225,9 +228,30 @@ function selectProfile(profile, panelId) {
     const descript = profile.getAttribute('data-description');
     const distribution = profile.getAttribute('data-distribution')
     const credit = profile.getAttribute('data-credits')
+    const prel1 = profile.getAttribute('data-prelim1')
+    const prel2= profile.getAttribute('data-prelim2')
+    const prel3 = profile.getAttribute('data-prelim3')
     // Update the secondary panel with course details
-    
+    if(prel1 === undefined)
+    {
         secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+
+    }
+    if(prel2 === "N/A")
+    {
+        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+
+    }
+    else if(prel3 === "N/A")
+    {
+        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+
+    }
+    else
+    {
+        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p><b>Prelim 3: ${prel3}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+
+    }
     
        
     

@@ -1,0 +1,1079 @@
+{
+    "AEM 1500": {
+      "prelim1": "2/20/2024",
+      "prelim2": "3/26/2024",
+      "prelim3": "4/30/2024"
+    },
+    "AEM 2210": {
+      "prelim1": "2/22/2024",
+      "prelim2": "3/26/2024",
+      "prelim3": "N/A"
+    },
+    "AEM 2240": {
+      "prelim1": "2/20/2024",
+      "prelim2": "3/26/2024",
+      "prelim3": "5/2/2024"
+    },
+    "AEM 2241": {
+      "prelim1": "3/26/2024",
+      "prelim2": "5/2/2024",
+      "prelim3": "N/A"
+    },
+    "AEM 2300": {
+      "prelim1": "3/12/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "AEM 2420": {
+      "prelim1": "2/22/2024",
+      "prelim2": "3/28/2024",
+      "prelim3": "N/A"
+    },
+    "AEM 2601": {
+      "prelim1": "3/5/2024",
+      "prelim2": "4/16/2024",
+      "prelim3": "N/A"
+    },
+    "AEM 3230": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/11/2024",
+      "prelim3": "N/A"
+    },
+    "AEM 4600": {
+      "prelim1": "3/12/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "AEM 5241": {
+      "prelim1": "3/26/2024",
+      "prelim2": "5/2/2024",
+      "prelim3": "N/A"
+    },
+    "AEM 5605": {
+      "prelim1": "3/12/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "AEP 3200": {
+      "prelim1": "3/12/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "AEP 4840": {
+      "prelim1": "3/14/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "AEP 5100": {
+      "prelim1": "3/12/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "ANSC 2210": {
+      "prelim1": "4/16/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "ANSC 5210": {
+      "prelim1": "4/16/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "ASL 1102": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "5/7/2024"
+    },
+    "BEE 4530": {
+      "prelim1": "3/21/2024",
+      "prelim2": "4/25/2024",
+      "prelim3": "N/A"
+    },
+    "BEE 5530": {
+      "prelim1": "3/21/2024",
+      "prelim2": "4/25/2024",
+      "prelim3": "N/A"
+    },
+    "BIOAP 4140": {
+      "prelim1": "2/22/2024",
+      "prelim2": "3/28/2024",
+      "prelim3": "N/A"
+    },
+    "BIOEE 1780": {
+      "prelim1": "3/5/2024",
+      "prelim2": "4/11/2024",
+      "prelim3": "N/A"
+    },
+    "BIOMG 2800": {
+      "prelim1": "2/20/2024",
+      "prelim2": "3/26/2024",
+      "prelim3": "4/30/2024"
+    },
+    "BIOMG 2801": {
+      "prelim1": "3/19/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "BIOMG 3300": {
+      "prelim1": "2/20/2024",
+      "prelim2": "3/26/2024",
+      "prelim3": "N/A"
+    },
+    "BIOMG 3350": {
+      "prelim1": "3/19/2024"
+    },
+    "BIOMG 6300": {
+      "prelim1": "2/20/2024",
+      "prelim2": "3/26/2024",
+      "prelim3": "N/A"
+    },
+    "BIOMG 6350": {
+      "prelim1": "3/19/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "BIOMI 2900": {
+      "prelim1": "3/14/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "BIOMI 4040": {
+      "prelim1": "3/5/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "BIOMS 4040": {
+      "prelim1": "3/5/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "BIOMS 4140": {
+      "prelim1": "2/22/2024",
+      "prelim2": "3/28/2024",
+      "prelim3": "N/A"
+    },
+    "BIONB 4140": {
+      "prelim1": "2/22/2024",
+      "prelim2": "3/28/2024",
+      "prelim3": "N/A"
+    },
+    "BME 2010": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/25/2024",
+      "prelim3": "N/A"
+    },
+    "BME 2110": {
+      "prelim1": "3/14/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "BME 3020": {
+      "prelim1": "2/22/2024",
+      "prelim2": "3/28/2024",
+      "prelim3": "N/A"
+    },
+    "BME 4020": {
+      "prelim1": "4/16/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "BTRY 3020": {
+      "prelim1": "2/22/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "BTRY 4090": {
+      "prelim1": "3/5/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "BTRY 5020": {
+      "prelim1": "2/22/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "BTRY 5090": {
+      "prelim1": "3/5/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "CEE 1130": {
+      "prelim1": "3/12/2024",
+      "prelim3": "N/A"
+    },
+    "CEE 3200": {
+      "prelim1": "3/7/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CEE 3510": {
+      "prelim1": "3/19/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "CEE 3710": {
+      "prelim1": "3/12/2024",
+      "prelim2": "4/25/2024",
+      "prelim3": "N/A"
+    },
+    "CEE 5900": {
+      "prelim1": "3/19/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CEE 6910": {
+      "prelim1": "3/19/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CHEM 1570": {
+      "prelim1": "2/13/2024",
+      "prelim2": "3/12/2024",
+      "prelim3": "4/18/2024"
+    },
+    "CHEM 2070": {
+      "prelim1": "3/5/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "CHEM 2080": {
+      "prelim1": "2/20/2024",
+      "prelim2": "3/26/2024",
+      "prelim3": "N/A"
+    },
+    "CHEM 2090": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "CHEM 2510": {
+      "prelim1": "3/7/2024",
+      "prelim2": "5/2/2024",
+      "prelim3": "N/A"
+    },
+    "CHEM 3580": {
+      "prelim1": "2/13/2024",
+      "prelim2": "3/12/2024",
+      "prelim3": "4/18/2024"
+    },
+    "CHEM 3590": {
+      "prelim1": "2/15/2024",
+      "prelim2": "3/14/2024",
+      "prelim3": "4/18/2024"
+    },
+    "CHEM 3900": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "CHEME 2200": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "CHEME 3230": {
+      "prelim1": "2/22/2024",
+      "prelim2": "4/11/2024",
+      "prelim3": "N/A"
+    },
+    "CHEME 3320": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "CHEME 3720": {
+      "prelim1": "3/5/2024",
+      "prelim2": "5/2/2024",
+      "prelim3": "N/A"
+    },
+    "CHEME 3900": {
+      "prelim1": "3/14/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "CHEME 4020": {
+      "prelim1": "2/22/2024",
+      "prelim2": "3/28/2024",
+      "prelim3": "N/A"
+    },
+    "COGST 2310": {
+      "prelim1": "3/21/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 1110": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "CS 1112": {
+      "prelim1": "3/14/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "CS 2110": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/18/2024",
+      "prelim3": "N/A"
+    },
+    "CS 2800": {
+      "prelim1": "3/14/2024",
+      "prelim2": "4/25/2024",
+      "prelim3": "N/A"
+    },
+    "CS 3410": {
+      "prelim1": "2/20/2024",
+      "prelim2": "4/11/2024",
+      "prelim3": "N/A"
+    },
+    "CS 3420": {
+      "prelim1": "3/12/2024",
+      "prelim2": "4/30/2024",
+      "prelim3": "N/A"
+    },
+    "CS 4410": {
+      "prelim1": "3/12/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "CS 4670": {
+      "prelim1": "3/7/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 4700": {
+      "prelim1": "3/14/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 4780": {
+      "prelim1": "3/14/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 4789": {
+      "prelim1": "3/21/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 4820": {
+      "prelim1": "2/20/2024",
+      "prelim2": "4/11/2024",
+      "prelim3": "N/A"
+    },
+    "CS 5410": {
+      "prelim1": "3/12/2024",
+      "prelim2": "4/23/2024",
+      "prelim3": "N/A"
+    },
+    "CS 5670": {
+      "prelim1": "3/7/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 5700": {
+      "prelim1": "3/14/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 5780": {
+      "prelim1": "3/14/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 5789": {
+      "prelim1": "3/21/2024",
+      "prelim2": "N/A",
+      "prelim3": "N/A"
+    },
+    "CS 5820": {
+      "prelim1": "2/20/2024",
+      "prelim2": "4/11/2024",
+      "prelim3": "N/A"
+    },
+    "ECE 1210": {
+      "prelim1": "2/20/2024",
+      "prelim2": "3/26/2024",
+      "prelim3": "N/A"
+    },
+    "ECE 2100": {
+      "prelim1": "2/20/2024",
+      "prelim2": "3/28/2024",
+      "prelim3": "N/A"
+    },
+    "ECE 2300": {
+      "prelim1": "2/22/2024",
+      "prelim2": "4/11/2024",
+      "prelim3": "N/A"
+    },
+    "ECE 2720": {
+      "prelim1": "3/7/2024",
+      "prelim2": "4/11/2024",
+      "prelim3": "N/A"
+    },
+    "ECE 3100": {
+      "prelim1": "3/5/2024",
+      "prelim2": "4/16/2024",
+      "prelim3": "N/A"
+    },
+    "ECE 3140": {
+      "prelim1": "3/12/2024",
+      "prelim2": "4/30/2024",
+      "prelim3": "N/A"
+    },
+    
+    "ECE 3150": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ECE 4070": {
+        "prelim1": "3/14/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ECE 4590": {
+        "prelim1": "3/19/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ECE 4840": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ECE 5350": {
+        "prelim1": "3/14/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ECE 5745": {
+        "prelim1": "3/28/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ECE 5840": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ECON 1110": {
+        "prelim1": "3/7/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ECON 1120 001": {
+        "prelim1": "2/22/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "ECON 1120 002": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "ECON 2300": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "ECON 3110": {
+        "prelim1": "3/21/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ECON 3120": {
+        "prelim1": "2/22/2024",
+        "prelim2": "3/26/2024",
+        "prelim3": "N/A"
+      },
+      "ENGRD 2020": {
+        "prelim1": "2/29/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ENGRD 2100": {
+        "prelim1": "2/20/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "ENGRD 2110": {
+        "prelim1": "3/7/2024",
+        "prelim2": "4/18/2024",
+        "prelim3": "N/A"
+      },
+      "ENGRD 2300": {
+        "prelim1": "2/22/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ENGRD 2620": {
+        "prelim1": "2/20/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ENGRD 2700": {
+        "prelim1": "3/12/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ENGRD 2720": {
+        "prelim1": "3/7/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ENGRD 3200": {
+        "prelim1": "3/7/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ENGRI 1101": {
+        "prelim1": "2/20/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ENGRI 1130": {
+        "prelim1": "3/12/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ENGRI 1210": {
+        "prelim1": "2/20/2024",
+        "prelim2": "3/26/2024",
+        "prelim3": "N/A"
+      },
+      "ENMGT 5900": {
+        "prelim1": "3/19/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ENVS 1201": {
+        "prelim1": "3/7/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+    
+      "HADM 1210": {
+        "prelim1": "2/20/2024",
+        "prelim2": "3/26/2024",
+        "prelim3": "N/A"
+      },
+      "HADM 1350": {
+        "prelim1": "3/19/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HADM 1361": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "HADM 1410": {
+        "prelim1": "3/7/2024",
+        "prelim2": "4/18/2024",
+        "prelim3": "N/A"
+      },
+      "HADM 1740": {
+        "prelim1": "3/7/2024",
+        "prelim2": "3/14/2024",
+        "prelim3": "4/16/2024"
+      },
+      "HADM 2021": {
+        "prelim1": "3/28/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HADM 2210": {
+        "prelim1": "2/20/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "HADM 2430": {
+        "prelim1": "3/26/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HADM 2560": {
+        "prelim1": "3/21/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HADM 2740": {
+        "prelim1": "3/7/2024",
+        "prelim2": "3/14/2024",
+        "prelim3": "4/16/2024"
+      },
+      "HADM 3010": {
+        "prelim1": "3/28/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HADM 3870": {
+        "prelim1": "3/7/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "HADM 3880": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "HADM 4300": {
+        "prelim1": "3/26/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HADM 4310": {
+        "prelim1": "3/21/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HADM 4375": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HADM 6375": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "HIST 1511": {
+        "prelim1": "3/19/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ILRID 1530": {
+        "prelim1": "3/19/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ILRLR 5010": {
+        "prelim1": "3/7/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ILRST 2100": {
+        "prelim1": "2/20/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "ILRST 2110": {
+        "prelim1": "3/28/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ILRST 3110": {
+        "prelim1": "3/21/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ILRST 5110": {
+        "prelim1": "3/28/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MAE 2020": {
+        "prelim1": "2/29/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 2030": {
+        "prelim1": "2/20/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 3130": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 3240": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 3780": {
+        "prelim1": "3/19/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MAE 3783": {
+        "prelim1": "3/19/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MAE 4070": {
+        "prelim1": "3/5/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MAE 4510": {
+        "prelim1": "2/20/2024",
+        "prelim2": "3/26/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 4530": {
+        "prelim1": "3/21/2024",
+        "prelim2": "4/25/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 4590": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MAE 4860": {
+        "prelim1": "3/7/2024",
+        "prelim2": "4/18/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 4861": {
+        "prelim1": "3/7/2024",
+        "prelim2": "4/18/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 5070": {
+        "prelim1": "3/5/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MAE 5510": {
+        "prelim1": "2/20/2024",
+        "prelim2": "3/26/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 5530": {
+        "prelim1": "3/21/2024",
+        "prelim2": "4/25/2024",
+        "prelim3": "N/A"
+      },
+      "MAE 5860": {
+        "prelim1": "3/7/2024",
+        "prelim2": "4/18/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 1106": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 1110": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 1120": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 1910": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 1920": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 2210": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 2220": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 2930": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 2940": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 3040": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 3110": {
+        "prelim1": "3/5/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MATH 3360": {
+        "prelim1": "2/22/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "MATH 4310": {
+        "prelim1": "3/12/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MSE 2060": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "MSE 2620": {
+        "prelim1": "2/20/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "MSE 3040": {
+        "prelim1": "2/15/2024",
+        "prelim2": "4/30/2024",
+        "prelim3": "N/A"
+      },
+      "MSE 3050": {
+        "prelim1": "3/28/2024",
+        "prelim2": "5/7/2024",
+        "prelim3": "N/A"
+      },
+      "MSE 3070": {
+        "prelim1": "3/21/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MSE 5430": {
+        "prelim1": "3/19/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MSE 5435": {
+        "prelim1": "3/7/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MSE 5802": {
+        "prelim1": "3/12/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "MSE 5840": {
+        "prelim1": "2/15/2024",
+        "prelim2": "4/30/2024",
+        "prelim3": "N/A"
+      },
+      "MSE 5850": {
+        "prelim1": "3/28/2024",
+        "prelim2": "5/7/2024",
+        "prelim3": "N/A"
+      },
+      "MSE 6050": {
+        "prelim1": "3/14/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "NTRES 1201": {
+        "prelim1": "3/7/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ORIE 3120": {
+        "prelim1": "2/20/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "ORIE 3310": {
+        "prelim1": "2/22/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "ORIE 3510": {
+        "prelim1": "3/26/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "ORIE 4600": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/25/2024",
+        "prelim3": "N/A"
+      },
+      "ORIE 5310": {
+        "prelim1": "2/22/2024",
+        "prelim2": "4/16/2024",
+        "prelim3": "N/A"
+      },
+      "ORIE 5510": {
+        "prelim1": "3/26/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+    
+      "PHIL 2310": {
+        "prelim1": "3/21/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "PHYS 1112": {
+        "prelim1": "2/22/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "PHYS 1116": {
+        "prelim1": "2/15/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "PHYS 2208": {
+        "prelim1": "2/22/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "PHYS 2213": {
+        "prelim1": "2/22/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "PHYS 2214": {
+        "prelim1": "2/22/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "PHYS 2218": {
+        "prelim1": "2/22/2024",
+        "prelim2": "3/28/2024",
+        "prelim3": "N/A"
+      },
+      "PHYS 4443": {
+        "prelim1": "3/26/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "PUBPOL 2030": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "PUBPOL 2100": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/30/2024",
+        "prelim3": "N/A"
+      },
+      "PUBPOL 2300": {
+        "prelim1": "3/12/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "PUBPOL 5280": {
+        "prelim1": "2/15/2024",
+        "prelim2": "3/26/2024",
+        "prelim3": "4/25/2024"
+      },
+      "SOC 2030": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 2100": {
+        "prelim1": "2/20/2024",
+        "prelim2": "4/11/2024",
+        "prelim3": "N/A"
+      },
+      "STSCI 2110": {
+        "prelim1": "3/28/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 2150": {
+        "prelim1": "3/7/2024",
+        "prelim2": "3/26/2024",
+        "prelim3": "4/16/2024"
+      },
+      "STSCI 3110": {
+        "prelim1": "3/21/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 3200": {
+        "prelim1": "2/22/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "STSCI 3510": {
+        "prelim1": "3/26/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 4090": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/18/2024",
+        "prelim3": "N/A"
+      },
+      "STSCI 5090": {
+        "prelim1": "3/5/2024",
+        "prelim2": "4/18/2024",
+        "prelim3": "N/A"
+      },
+      "STSCI 5110": {
+        "prelim1": "3/28/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 5150": {
+        "prelim1": "3/7/2024",
+        "prelim2": "3/26/2024",
+        "prelim3": "4/16/2024"
+      },
+      "STSCI 5201": {
+        "prelim1": "2/22/2024",
+        "prelim2": "4/23/2024",
+        "prelim3": "N/A"
+      },
+      "STSCI 5550": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 5610": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 5740": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 5770": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 6100": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 6200": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 6210": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 6400": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      },
+      "STSCI 6700": {
+        "prelim1": "3/14/2024",
+        "prelim2": "N/A",
+        "prelim3": "N/A"
+      }
+}
+    
+  
