@@ -11,26 +11,40 @@
 </head>
 <body>
     <div class = 'toprow'>
-        <a href="ind.html">
-        <div id = 'title'>CornellMedian</div>
-        </a>
-        <div id = "useracc"></div>
+        <a href="ind.html"><div id = 'title'>CornellMedian</div></a>
+    <div id = "useracc"></div>
     </div>
     <div id="buttonContainer">
             <a href="ind.html">
                 <button id = 'submissions'>database</button>
             </a>
-            <a href="schedule.html">
-                <button id = 'submissions'>schedule</button>
+            <a href="index.html">
+                <button id = 'submissions'>submissions</button>
             </a>
             <button id="signInWithGoogle">sign in</button>
             <button id="signOutButton">sign out</button>
     </div>
-    
-
-    <div class="panels-wrapper">
-        <div class="panel" id="panel1"><h2>My Submitted Courses</h2></div>
+    <div id = "mediangpa">
+        <b>Median Semester GPA : 3.73</b>
     </div>
+    
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="calendar-body" id="calendarBody">
+            <!-- Days will be added dynamically here -->
+        </div>
+    </div>
+    
+    
+   
 
    
 
@@ -50,5 +64,6 @@
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
 
 <script src="submission.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

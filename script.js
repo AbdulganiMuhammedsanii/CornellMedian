@@ -3,6 +3,8 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 
+
+//webscraping course info to json
 function courseDescription(course, coursenumber) {
     // Implement matching logic here
     // This is a placeholder for demonstration
@@ -44,13 +46,98 @@ const firebaseConfig = {
   var database = firebase.database();
 
 
+const signInWithGoogleButton = document.getElementById('signInWithGoogle')
+
+const auth = firebase.auth();
+
+const signInWithGoogle = () => {
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+  auth.signInWithRedirect(googleProvider)
+  .then(() => {
+    window.location.assign('./profile');
+  })
+  .catch(error => {
+    console.error(error);
+  })
+}
+
+signInWithGoogleButton.addEventListener('click', signInWithGoogle);
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      const use = document.getElementById('useracc');
+      const useracc = document.createElement('div');
+        useracc.classList.add('useraccount');
+        useracc.innerHTML = `<h3><b>Hi, ${user.displayName}<b><h3>`;
+        use.appendChild(useracc)
+
+      document.getElementById('signOutButton').style.display = 'block';
+      document.getElementById('signInWithGoogle').style.display = 'none';
+      console.log("User is signed in");
+      console.log("User ID: " + user.uid);
+      console.log("User Name: " + user.displayName);
+      console.log("User Email: " + user.email);
+      // ... you can use other user properties as needed
+    } else {
+      // No user is signed in.
+      const use = document.getElementById('useracc');
+      const useracc = document.createElement('div');
+        useracc.classList.add('useraccount');
+        useracc.innerHTML = `<h3><b>Please Sign In<b><h3>`;
+        use.appendChild(useracc)
+      document.getElementById('signOutButton').style.display = 'none';
+      document.getElementById('signInWithGoogle').style.display = 'block';
+      console.log("No user is signed in");
+    }
+  });
+
+
+  function signOutUser() {
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      console.log('User signed out.');
+      // Optionally, redirect the user to the login page or another page
+      window.location.assign(''); // Replace 'login.html' with your login page URL
+    }).catch(function(error) {
+      // An error happened during sign-out.
+      console.error('Error signing out:', error);
+    });
+  }
+  
+  document.getElementById('signOutButton').addEventListener('click', signOutUser);
+
+  
+
 document.addEventListener('DOMContentLoaded', () => {
+    
+    
     document.getElementById('scrolltopanels').addEventListener('click', () => {
     document.getElementById('panels-wrapper').scrollIntoView({ behavior: 'smooth' });
 });
     loadUserProfiles('panel1');
     document.getElementById('GradeFilterpanel1').addEventListener('change', () => filterProfiles('panel1'));
     document.getElementById('CourseFilterpanel1').addEventListener('change', () => filterProfiles('panel1'));
+    document.getElementById('courseSearch').addEventListener('input', function() {
+        const searchValue = this.value.toUpperCase();
+        const courseSelect = document.getElementById('CourseFilterpanel1');
+        const options = courseSelect.options;
+        const profiles = document.querySelectorAll(`#panel1 .userProfile`);
+        profiles.forEach(profile => {
+            const course = profile.getAttribute('data-course');
+            if ((course.includes(searchValue))) {
+                profile.style.display = ''; // Show profile
+                
+            } 
+            else
+            {
+                profile.style.display = 'None'; // Hide profile
+            }
+        });
+    });
+    
     document.getElementById('matchButton').addEventListener('click', function() {
         document.getElementById('courseModal').style.display = 'block';
     });
@@ -116,10 +203,74 @@ window.onclick = function(event) {
     }
 }
 
+
+function addCourseSubmission(courseData) {
+    const submissionRef = firebase.database().ref('1XCeMcCC2oDvdCo_6O6O9I1Q6PFR2Av5HhZQV4YY1_yY/Submissions/'+courseData.courseName);
+    return submissionRef.set(courseData)
+      .then(() => console.log(`Submission added for ${courseData.courseName}`))
+      .catch((error) => console.error('Error adding submission:', error));
+  }
+
+function addScheduleSubmission(courseName, user) {
+    console.log('hey');
+    const submissionRef = firebase.database().ref('1XCeMcCC2oDvdCo_6O6O9I1Q6PFR2Av5HhZQV4YY1_yY/Schedules/'+user.email+'/'+courseName);
+    return submissionRef.set(courseName)
+      .then(() => console.log(`Submission added to ${user.email }for ${courseName}`))
+      .catch((error) => console.error('Error adding submission:', error));
+}
 // ...rest of the existing code...
+const courseForm = document.getElementById('courseForm');
+
+submission.addEventListener('click', addScheduleSubmission)
+{
+    
+}
 
 
 
+
+    // Add event listener for form submission
+    courseForm.addEventListener('submit', function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              // User is signed in.
+              const courseData = {
+                courseName: document.getElementById('courseName').value,
+                professor: document.getElementById('professor').value,
+                medianGrade: document.getElementById('medianGrade').value,
+                semester: document.getElementById('semester').value,
+                submitter: user.email
+                
+            };
+            addCourseSubmission(courseData).then(() => {
+                // Clear the form or show a success message after submission
+                courseForm.reset();
+                // Add any additional actions you want to perform after submission
+            });
+            } else {
+              // No user is signed in.
+              const courseData = {
+                courseName: document.getElementById('courseName').value,
+                professor: document.getElementById('professor').value,
+                medianGrade: document.getElementById('medianGrade').value,
+                semester: document.getElementById('semester').value,
+                submitter: 'anonymous'
+            };
+            addCourseSubmission(courseData).then(() => {
+                // Clear the form or show a success message after submission
+                courseForm.reset();
+                // Add any additional actions you want to perform after submission
+            });
+            }
+            // Add the course data to Firebase
+          });
+
+        // Get values from the form
+
+    });
     
 });
 
@@ -193,6 +344,9 @@ function loadUserProfiles(panelID) {
 
 }
 
+
+
+
 function Match() {
     // Toggle the display of the submission fields
     var submissionFields = document.getElementById('courseFormPopup');
@@ -232,26 +386,65 @@ function selectProfile(profile, panelId) {
     const prel2= profile.getAttribute('data-prelim2')
     const prel3 = profile.getAttribute('data-prelim3')
     // Update the secondary panel with course details
-    if(prel1 === undefined)
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          // ... you can use other user properties as needed
+          if(prel1 === undefined)
     {
-        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button><button id = "matchButton2" >add to schedule</button>`;
 
     }
     if(prel2 === "N/A")
     {
-        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button><button id = "matchButton2" >add to schedule</button>`;
 
     }
     else if(prel3 === "N/A")
     {
-        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button><button id = "matchButton2" >add to schedule</button>`;
 
     }
     else
     {
-        secondaryelement.innerHTML = `<h3>${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p><b>Prelim 3: ${prel3}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >Explore</button>`;
+        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p><b>Prelim 3: ${prel3}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button><button id = "matchButton2" >add to schedule</button>`;
 
     }
+    const second = document.getElementById('matchButton2');
+
+    second.addEventListener('click', function() {
+        console.log(user.email, course)
+        const submissionRef = firebase.database().ref('1XCeMcCC2oDvdCo_6O6O9I1Q6PFR2Av5HhZQV4YY1_yY/Schedules/'+user.email.substring(0, user.email.length-4)+'/'+course);
+        submissionRef.set(course)
+      .then(() => console.log(`Submission added to ${user.email }for ${course}`))
+      .catch((error) => console.error('Error adding submission:', error));
+    });
+    
+        }
+        else{
+    if(prel1 === undefined)
+    {
+        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button>`;
+
+    }
+    if(prel2 === "N/A")
+    {
+        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button>`;
+
+    }
+    else if(prel3 === "N/A")
+    {
+        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button>`;
+
+    }
+    else
+    {
+        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p><b>Prelim 3: ${prel3}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button>`;
+
+    }
+
+        }
+      });
     
        
     
@@ -290,4 +483,31 @@ function isAgeInRange(age, range) {
     if (range === '24+') return age >= 24;
     return false;
 } 
+
+function Searchfilter(substr) {
+    
+    const coursefilterValue = document.getElementById(`CourseFilter${panelId}`).value;
+    const profiles = document.querySelectorAll(`#${panelId} .userProfile`);
+    
+    profiles.forEach(profile => {
+        const course = profile.getAttribute('data-course');
+        
+        if ((gradefilterValue === 'all' || grade.includes(gradefilterValue)) && (coursefilterValue === 'all' || course.includes(coursefilterValue))) {
+            profile.style.display = ''; // Show profile
+            
+        } 
+        else
+        {
+            profile.style.display = 'None'; // Hide profile
+        }
+    });
+}
+
+function isAgeInRange(age, range) {
+    if (range === '18-20') return age >= 18 && age <= 20;
+    if (range === '21-23') return age >= 21 && age <= 23;
+    if (range === '24+') return age >= 24;
+    return false;
+}
+
 

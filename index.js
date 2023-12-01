@@ -1,5 +1,5 @@
 const { initializeApp } = require('firebase/app');
-const { getDatabase, ref, get, update, child } = require('firebase/database');
+const { getDatabase, ref, get, update, } = require('firebase/database');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
@@ -16,6 +16,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+
 
 // Initialize Firebase
 fs.readFile('Course.json', 'utf-8', async (err, data) => {
