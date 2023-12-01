@@ -10,6 +10,11 @@ body {
     justify-content: left;
 }
 
+.toprow {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
 .panels-wrapper {
     display: flex;
     flex-direction: row;
@@ -18,18 +23,36 @@ body {
     margin-top: 20px;
 }
 
-.opening {
-    height: 100vh;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.opening h1 {
+#title {
+    margin-top: 10px;
+    margin-left:2%;
+    padding: 15px 30px;
+    vertical-align: auto;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
 }
 
+#useracc {
+    margin-top: 10px;
+    margin-right:2.5%;
+    padding: 10px 20px;
+    width: 278px;
+    height: 60px;
+    text-align:center;
+    vertical-align: auto;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+}
 .panel {
     justify-content: left;
     width: 45%;
@@ -60,6 +83,32 @@ body {
 }
 
 #matchButton {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#matchButton1 {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#matchButton2 {
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 10px 20px;
     background-color: #000000;
     color: white;
@@ -76,6 +125,42 @@ body {
     object-fit: cover;
     border-radius: 5px;
 }
+
+#courseSearch {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+    width: calc(20% - 16px); /* Adjust width as needed */
+    /* Additional styling */
+}
+
+.filter {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filter label {
+    margin-right: 10px;
+    font-weight: 250;
+    font-size: 13px;
+    color: #333;
+}
+
+.filter select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+
 
 .filter {
     margin-left: 10px;
@@ -115,7 +200,24 @@ html {
 }
 
 #scrolltopanels {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+#buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%
+}
+
+#explore {
+    margin-top: 10px;
+    margin-right:10px;
     padding: 10px 20px;
+    vertical-align: auto;
     background-color: #000000;
     color: white;
     border: none;
@@ -124,6 +226,62 @@ html {
     font-weight: 500;
     letter-spacing: 0.5px;
 }
+#submissions {
+    margin-top: 10px;
+    margin-right:10px;
+    padding: 10px 20px;
+    vertical-align: auto;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#mediangpa {
+    margin-top: 10px;
+    margin-left:10px;
+    padding: 10px 20px;
+    vertical-align: auto;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#signInWithGoogle {
+    margin-top: 10px;
+    width: 100px; /* Adjust this value as needed */
+    vertical-align: auto;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 10px 20px; /* Adjust padding for better text display */
+}
+
+
+#signOutButton {
+    margin-top: 10px;
+    margin-right:10px;
+    width: 100px; /* Adjust this value as needed */
+    vertical-align: auto;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 10px 20px; /* Adjust padding for better text display */
+}
+
 
 .modal, .confirmationModal {
     display: none;
@@ -232,3 +390,56 @@ html {
 
 /* Additional styles */
 /* ... Your other existing styles ... */
+
+/* calendar for schedule */
+
+.calendar-container {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.calendar-header, .calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 days a week */
+}
+
+.calendar-header > div, .calendar-day {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.day-container {
+    /* Styles for each day container */
+    margin-top: 10px;
+    margin-right:5px;
+    padding: 10px 20px;
+    vertical-align: auto;
+    background-color: #e9e9e9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.courses-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center course buttons */
+}
+
+.calendar-day {
+    color: rgb(255, 255, 255); /* Set text color to white */
+    background-color: rgb(0, 0, 0); /* Set background color to match the container */
+    border: none; /* Optionally remove border */
+    padding: 5px 10px; /* Adjust padding as needed */
+    margin: 15px 0; /* Space between buttons */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    /* Add other styling as needed */
+    font-size: 16px; /* Increase font size; adjust as needed */
+    border-radius: 6px;
+
+}
