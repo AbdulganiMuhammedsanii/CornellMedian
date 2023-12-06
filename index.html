@@ -10,19 +10,13 @@
     
 </head>
 <body>
-    <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
     <div class = 'toprow'>
-        <a href="inde.html">
         <div id = 'title'>CornellMedian</div>
-        </a>
-        <div id = "useracc"></div>
+    <div id = "useracc"></div>
     </div>
     <div id="buttonContainer">
-            <a href="inde.html">
-                <button id = 'submissions'>database</button>
+            <a href="submission.html">
+                <button id = 'submissions'>submission</button>
             </a>
             <a href="schedule.html">
                 <button id = 'submissions'>schedule</button>
@@ -31,12 +25,118 @@
             <button id="signOutButton">sign out</button>
     </div>
     
-
-    <div class="panels-wrapper">
-        <div class="panel" id="panel1"><h2>My Submitted Courses</h2></div>
+    <div>
+        <h1 id="scrolltopanels"></h1>
+    </div>
+    
+    
+    <div class="filter">
+        <label for="courseSearch">Search: </label>
+        <input type="text" id="courseSearch" placeholder="Type to search...">
+    </div>
+    <div class="filter">
+        <!-- Your existing CourseFilterpanel1 select element -->
+    </div>
+    <!-- Rest of your HTML -->
+    
+    <div class="filter">
+        <label for="CourseFilterpanel1">Course: </label>
+        <select id="CourseFilterpanel1">
+            <option value="all">All</option>
+            <option value="AAS">AAS</option>
+            <option value="AEM">AEM</option>
+            <option value="AEP">AEP</option>
+            <option value="AMST">AMST</option>
+            <option value="ANSC">AAS</option>
+            <option value="ASTRO">AEM</option>
+            <option value="BEE">BEE</option>
+            <option value="BIOEE">BIOEE</option>
+            <option value="BIOG">BIOG</option>
+            <option value="BIOMG">BIOMG</option>
+            <option value="BIOMI">BIOME</option>
+            <option value="BME">BME</option>
+            <option value="BTRY">BTRY</option>
+            <option value="CHEM">CHEM</option>
+            <option value="CHEME">CHEME</option>
+            <option value="COMM">COMM</option>
+            <option value="CRP">CRP</option>
+            <option value="CS">CS</option>
+            <option value="EAS">EAS</option>
+            <option value="ECE">ECE</option>
+            <option value="ECON">ECON</option>
+            <option value="ENGRD">ENGRD</option>
+            <option value="ENGRI">ENGRI</option>
+            <option value="GERST">GERST</option>
+            <option value="GOVT">GOVT</option>
+            <option value="HADM">HADM</option>
+            <option value="HIST">HIST</option>
+            <option value="ILRLE">ILRLE</option>
+            <option value="ILRLR">ILRLR</option>
+            <option value="INFO">INFO</option>
+            <option value="MAE">MAE</option>
+            <option value="MATH">MATH</option>
+            <option value="MSE">MSE</option>
+            <option value="MUSIC">MUSIC</option>
+            <option value="NES">NES</option>
+            <option value="NS">NS</option>
+            <option value="NTRES">NTRES</option>
+            <option value="ORIE">ORIE</option>
+            <option value="PAM">PAM</option>
+            <option value="PHIL">PHIL</option>
+            <option value="PHYS">PHYS</option>
+            <option value="PSYCH">PSYCH</option>
+            <option value="SOC">SOC</option>
+            <option value="SPAN">SPAN</option>
+            <option value="STSCI">STSCI</option>
+            <option value="SPAN">SPAN</option>
+            <option value="STSCI">STSCI</option>
+        </select>
+    <div class="filter">
+        <label for="GradeFilterpanel1">Grade: </label>
+        <select id="GradeFilterpanel1">
+            <option value="all">All</option>
+            <option value="A">A-/A/A+</option>
+            <option value="B">B-/B/B+</option>
+            <option value="C">C-/C/C+</option>
+        </select>
     </div>
 
-   
+    </div>
+    <div class="panels-wrapper">
+        <div class="panel" id="panel1"></div>
+        <div class="panel" id="panel2" hidden></div>
+
+        
+    </div>
+
+    <button id="matchButton">Submit Course</button>
+
+    <div id="submissionMessage" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Your submission will be reviewed.</h2>
+        </div>
+    </div>
+
+    <div id="courseModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="courseForm">
+                <label for="courseName">Course Name:</label>
+                <input type="text" id="courseName" name="courseName"><br><br>
+    
+                <label for="professor">Professor:</label>
+                <input type="text" id="professor" name="professor"><br><br>
+    
+                <label for="medianGrade">Median Grade:</label>
+                <input type="text" id="medianGrade" name="medianGrade"><br><br>
+    
+                <label for="semester">Semester:</label>
+                <input type="text" id="semester" name="semester"><br><br>
+    
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 
 
 <!-- Your Custom JavaScript -->
@@ -48,11 +148,12 @@
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
       }
-</script>
+      </script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
 
+<script src="script.js"></script>
 <script src="submission.js"></script>
 </body>
 </html>
