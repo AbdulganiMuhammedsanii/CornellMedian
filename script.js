@@ -409,7 +409,7 @@ function selectProfile(profile, panelId) {
 
     second.addEventListener('click', function() {
         console.log(user.email, course)
-        const submissionRef = firebase.database().ref('1XCeMcCC2oDvdCo_6O6O9I1Q6PFR2Av5HhZQV4YY1_yY/Schedules/'+user.email.substring(0, user.email.length-4)+'/'+course);
+        const submissionRef = firebase.database().ref('1XCeMcCC2oDvdCo_6O6O9I1Q6PFR2Av5HhZQV4YY1_yY/Schedules/'+user.email.substring(0, user.email.length-4)+'/'+course.replace(/ /g, ''));
         submissionRef.set(course)
       .then(() => console.log(`Submission added to ${user.email }for ${course}`))
       .catch((error) => console.error('Error adding submission:', error));
