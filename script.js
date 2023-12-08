@@ -221,11 +221,6 @@ function addScheduleSubmission(courseName, user) {
 // ...rest of the existing code...
 const courseForm = document.getElementById('courseForm');
 
-submission.addEventListener('click', addScheduleSubmission)
-{
-    
-}
-
 
 
 
