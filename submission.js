@@ -47,7 +47,7 @@ const signInWithGoogleButton = document.getElementById('signInWithGoogle')
 
 const auth = firebase.auth();
 
-const signInWithGoogle = () => {
+const sigInWithGoogle = () => {
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 auth.signInWithRedirect(googleProvider)
@@ -59,7 +59,7 @@ auth.signInWithRedirect(googleProvider)
 })
 }
 
-signInWithGoogleButton.addEventListener('click', signInWithGoogle);
+signInWithGoogleButton.addEventListener('click', sigInWithGoogle);
 
 
 
