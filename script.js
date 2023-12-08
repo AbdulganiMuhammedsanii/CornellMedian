@@ -29,7 +29,7 @@ document.getElementById('scrolltopanels').addEventListener('click', () => {
 });
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+const firebaseC = {
     apiKey: "AIzaSyAR8RGFkik7wOZyiGAPNMzcMjwDBMnsyww",
     authDomain: "cornellmedian.firebaseapp.com",
     databaseURL: "https://cornellmedian-default-rtdb.firebaseio.com",
@@ -40,7 +40,7 @@ const firebaseConfig = {
     measurementId: "G-85YCSMQLT2"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseC);
   
   // Get a reference to the database service
   var database = firebase.database();
