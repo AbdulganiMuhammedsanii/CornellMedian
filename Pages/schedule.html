@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html> 
+
+<head>
+    <title>CornellMedian</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="937943320596-tnouq1rvkd9iua811lq03h90cpgjq9j6.apps.googleusercontent.com">
+    
+</head>
+<body>
+    <div class = 'toprow'>
+        <div id = 'title'>CornellMedian</div>
+    <div id = "useracc"></div>
+    </div>
+    <div id="buttonContainer">
+            <a href="index.html">
+                <button class = 'nav-button' id = 'submissions'>database</button>
+            </a>
+            <a href="submission.html">
+                <button class = 'nav-button' id = 'submissions'>submissions</button>
+            </a>
+            <a>
+            <button class = 'nav-button' id="signInWithGoogle">sign in</button>
+            </a>
+            <a>
+            <button class = 'nav-button' id="signOutButton">sign out</button>
+            </a>
+    </div>
+    
+    <div id = "mediangpa">
+        <b>Median Semester GPA : <p id = "gpa"></p></b>
+    </div>
+    
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="calendar-body" id="calendarBody">
+            <!-- Days will be added dynamically here -->
+        </div>
+    </div>
+    
+    
+   
+
+   
+
+
+<!-- Your Custom JavaScript -->
+<script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      }
+</script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+
+<script src="../Scripts/submission.js"></script>
+<script src="../Scripts/script.js"></script>
+</body>
+</html>
