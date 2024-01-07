@@ -21,6 +21,20 @@ body {
         flex-wrap: nowrap; /* Prevent wrapping to a new line */
     }
     
+    #useracc {
+        margin-top: 10px;
+        margin-right: 2%;
+        width: 290px;
+        height:16px;
+        line-height: 10px; /* New line for vertical alignment */
+        background-color: #000000;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 400;
+    }
 
     #matchButton, #matchButton1, #matchButton2 {
         padding: 10px 15px;
@@ -30,7 +44,7 @@ body {
     }
 
     #courseSearch {
-        width: 50%; /* Full width for the search bar */
+        width: 100%; /* Full width for the search bar */
         margin-bottom: 10px; /* Add some space below the search bar */
     }
 
@@ -41,20 +55,13 @@ body {
         padding: 10px 20px;
         text-align: center;
         display: inline-block;
-        font-size: 8dvb;
+        font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 5px;
     }
 
-    .filter {
-        flex-direction: column;
-        align-items: stretch; /* Align items stretch to take full width */
-    }
-
-    .filter label, .filter select {
-        width: 100%; /* Full width for label and select elements */
-    }
+   
 
     /* ... any other necessary adjustments ... */
 }
@@ -90,12 +97,10 @@ body {
 
 #useracc {
     margin-top: 10px;
-    margin-right:2%;
-    padding: 10px 20px;
-    width: 300px;
-    height: 60px;
-    text-align:center;
-    vertical-align: auto;
+    margin-right: 2%;
+    width: 290px;
+    height:45px;
+    line-height: 10px; /* New line for vertical alignment */
     background-color: #000000;
     color: white;
     border: none;
@@ -104,6 +109,7 @@ body {
     font-size: 16px;
     font-weight: 400;
 }
+
 
 #navbar {
     display: flex;
@@ -128,6 +134,8 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+
+
 
 .nav-button:hover {
     background-color: #000000;
