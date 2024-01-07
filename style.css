@@ -25,12 +25,12 @@ body {
         margin-top: 10px;
         margin-right: 2%;
         width: 290px;
-        height:16px;
+        height:20px;
         line-height: 10px; /* New line for vertical alignment */
         background-color: #000000;
         color: white;
         border: none;
-        border-radius: 10px;
+        border-radius: 8px;
         cursor: pointer;
         font-size: 16px;
         font-weight: 400;
