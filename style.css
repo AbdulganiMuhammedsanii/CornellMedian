@@ -12,47 +12,53 @@ body {
 /* Existing styles... */
 
 @media screen and (max-width: 600px) {
-    body {
-        /* Adjust body styles for mobile, if needed */
-    }
+    /* ... other styles ... */
 
-    .toprow, .panels-wrapper, #navbar, .filter, #buttonContainer {
-        flex-direction: column;
-        align-items: stretch;
+    #buttonContainer {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: row; /* Align children in a row */
+        justify-content: space-around; /* Space children evenly with space around them */
+        flex-wrap: nowrap; /* Prevent wrapping to a new line */
     }
+    
 
-    .toprow {
-        justify-content: center;
-    }
-
-    #title, #useracc, .nav-button, #matchButton, #matchButton1, #matchButton2 {
+    #matchButton, #matchButton1, #matchButton2 {
         padding: 10px 15px;
         margin: 5px;
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 8px; /* Adjust font size for smaller screens */
+        flex: 1 1 auto; /* Adjust flex properties to fit horizontally */
     }
 
-    .panel, .userProfile img {
-        width: 100%; /* Full width for smaller screens */
-        max-height: unset; /* Adjust as needed */
+    #courseSearch {
+        width: 50%; /* Full width for the search bar */
+        margin-bottom: 10px; /* Add some space below the search bar */
+    }
+
+    .nav-button {
+        background-color: #000000; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        font-size: 8dvb;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
     }
 
     .filter {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch; /* Align items stretch to take full width */
     }
 
-    .filter label, .filter select, #courseSearch {
-        width: 100%; /* Full width inputs and selects */
-        margin-bottom: 10px; /* Add some space between elements */
+    .filter label, .filter select {
+        width: 100%; /* Full width for label and select elements */
     }
 
-    .modal-content {
-        width: 90%; /* Adjust modal width for mobile screens */
-        margin: 10% auto; /* Centering vertically */
-    }
-
-    /* Adjust any other elements as necessary for mobile layout */
+    /* ... any other necessary adjustments ... */
 }
+
 
 
 .toprow {
