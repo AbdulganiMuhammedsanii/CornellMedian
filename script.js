@@ -50,27 +50,146 @@ const signInWithGoogleButton = document.getElementById('signInWithGoogle')
 
 const auth = firebase.auth();
 
+var fn = document.getElementById('fn');
+var ln = document.getElementById('ln');
+var em = document.getElementById('em');
+var pas = document.getElementById('pas');
+
+// Sign up
+window.signup = function(e){
+    e.preventDefault();
+    const modal = document.getElementById('SignupInfo');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 500); // Delay must match the CSS transition duration
+    var obj={
+        fn:fn.value,
+        ln:ln.value,
+        em:em.value,
+        pas:pas.value,
+    }
+    auth.createUserWithEmailAndPassword(obj.em, obj.pas)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    user.updateProfile({
+        displayName: obj.fn + " " + obj.ln
+    }).then(function() {
+        // Update successful
+        console.log("Display Name Updated: ", user.displayName);
+    }).catch(function(error) {
+        // An error happened while updating the display name
+        console.error("Error updating display name: ", error);
+    });
+    //(user);
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+  //console.log(obj);
+}
+
+var ema = document.getElementById('ema');
+var pass = document.getElementById('pass');
+
+//Sign In
+
+window.signin = function(e){
+    e.preventDefault();
+    const modal = document.getElementById('loginInfo');
+    modal.classList.remove('show');
+    setTimeout(() => { // Redirects to the homepage
+        modal.style.display = 'none';
+    }, 500); // Delay must match the CSS transition duration
+    var obj={
+        em:em.value,
+        pas:pas.value,
+    }
+    auth.signInWithEmailAndPassword(obj.em, obj.pas)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    //console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+  //console.log(obj);
+}
+
+
+window.loginmember = function(e){
+    e.preventDefault();
+    const modal = document.getElementById('SignupInfo');
+    const modal2 = document.getElementById('loginInfo');
+    modal.classList.remove('show');
+    console.log("hello");
+    setTimeout(() => { // Redirects to the homepage
+        modal.style.display = 'none';
+    }, 800); // Delay must match the CSS transition duration
+    modal2.classList.add('show');
+    modal2.style.display = 'flex'
+  //console.log(obj);
+}
+
+window.signupmember = function(e){
+    e.preventDefault();
+    const modal = document.getElementById('SignupInfo');
+    const modal2 = document.getElementById('loginInfo');
+    modal2.classList.remove('show');
+    console.log(modal);
+    setTimeout(() => { // Redirects to the homepage
+        modal2.style.display = 'none';
+    }, 800); // Delay must match the CSS transition duration
+    modal.classList.add('show');
+    modal.style.display = 'flex'
+  //console.log(obj);
+}
+
+
+
 const signInWithGoogle = () => {
   const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-  auth.signInWithRedirect(googleProvider)
+  auth.signInWithPopup(googleProvider)
   .then(() => {
+    window.location.assign('./');
   })
   .catch(error => {
     console.error(error);
   })
 }
 
-signInWithGoogleButton.addEventListener('click', signInWithGoogle);
+//signInWithGoogleButton.addEventListener('click', signInWithGoogle);
 
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+      function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+      }
+      
+
       const use = document.getElementById('useracc');
       const useracc = document.createElement('div');
         useracc.classList.add('useraccount');
-        useracc.innerHTML = `<h3><b>Hi, ${user.displayName}<b><h3>`;
+        if(user.displayName)
+        {
+            useracc.innerHTML = `<h3><b>Hi, ${user.displayName}<b><h3>`;
+        }
+        else
+        {
+            delay(1000).then(() => useracc.innerHTML = `<h3><b>Hi, ${user.displayName}<b><h3>`);
+        }
+        
         use.appendChild(useracc)
 
       document.getElementById('signOutButton').style.display = 'block';
@@ -85,7 +204,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       const use = document.getElementById('useracc');
       const useracc = document.createElement('div');
         useracc.classList.add('useraccount');
-        useracc.innerHTML = `<h3><b>Please Sign In<b><h3>`;
+        useracc.innerHTML = `<h3><b><b><h3>`;
         use.appendChild(useracc)
       document.getElementById('signOutButton').style.display = 'none';
       document.getElementById('signInWithGoogle').style.display = 'block';
@@ -116,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('scrolltopanels').addEventListener('click', () => {
     document.getElementById('panels-wrapper').scrollIntoView({ behavior: 'smooth' });
 });
+
     loadUserProfiles('panel1');
     document.getElementById('GradeFilterpanel1').addEventListener('change', () => filterProfiles('panel1'));
     document.getElementById('CourseFilterpanel1').addEventListener('change', () => filterProfiles('panel1'));
@@ -167,14 +287,87 @@ function hideModalWithFade(modalId) {
 // Modify the event listener for the matchButton
 document.getElementById('matchButton').addEventListener('click', function() {
     showModalWithFade('courseModal');
+    console.log("WORKS");
 });
 
+document.getElementById('courseForm1').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+        console.log("HEUFHFUIE");
+
+        hideModalWithFade('courseModal');
+
+    // Show the submission message
+    showModalWithFade('submissionMessage');
+
+    // Hide the submission message after a delay
+    setTimeout(() => {
+        hideModalWithFade('submissionMessage');
+    }, 1500); // 3 seconds
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              // User is signed in.
+              const courseData = {
+                courseName: document.getElementById('courseName').value,
+                professor: document.getElementById('professor').value,
+                medianGrade: document.getElementById('medianGrade').value,
+                semester: document.getElementById('semester').value,
+                submitter: user.email
+                
+            };
+            console.log(courseData);
+            addCourseSubmission(courseData).then(() => {
+                // Clear the form or show a success message after submission
+                SubmissionForm.reset();
+                // Add any additional actions you want to perform after submission
+            });
+            } else {
+              // No user is signed in.
+              const courseData = {
+                courseName: document.getElementById('courseName').value,
+                professor: document.getElementById('professor').value,
+                medianGrade: document.getElementById('medianGrade').value,
+                semester: document.getElementById('semester').value,
+                submitter: 'anonymous'
+            };
+            addCourseSubmission(courseData).then(() => {
+                // Clear the form or show a success message after submission
+                SubmissionForm.reset();
+                // Add any additional actions you want to perform after submission
+            });
+            }
+            // Add the course data to Firebase
+          });
+
+        // Get values from the form
+    // Hide the course submission modal
+});
+
+document.getElementById('signInWithGoogle').addEventListener('click', function() {
+    console.log('here');
+    showModalWithFade('loginInfo');
+});
+
+document.getElementById('not yet').addEventListender('click', function()
+{
+    console.log("REREEE");
+    hideModelWithFade('loginInfo');
+    showModalWithFade('SignupInfo');
+})
+
+document.getElementById('already').addEventListender('click', function()
+{
+    hideModelWithFade('SignupInfo');
+    showModalWithFade('loginInfo');
+})
+
 // Modify the form submission event listener
-document.getElementById('courseForm').addEventListener('submit', function(event) {
+document.getElementById('signInWithGoogle').addEventListener('Sign Up', function(event) {
     event.preventDefault();
 
     // Hide the course submission modal
-    hideModalWithFade('courseModal');
+    hideModalWithFade('SignupInfo');
 
     // Show the submission message
     showModalWithFade('submissionMessage');
@@ -184,6 +377,17 @@ document.getElementById('courseForm').addEventListener('submit', function(event)
         hideModalWithFade('submissionMessage');
     }, 1500); // 3 seconds
 });
+
+document.getElementById('signInWithGoogle').addEventListener('Sign In', function(event) {
+    event.preventDefault();
+    // Hide the course submission modal
+    hideModalWithFade('loginInfo');
+
+    // Show the submission message
+    // Hide the submission message after a delay
+});
+
+
 
 
 // Modify the event listener for the close button
@@ -218,16 +422,16 @@ function addScheduleSubmission(courseName, user) {
       .catch((error) => console.error('Error adding submission:', error));
 }
 // ...rest of the existing code...
-const courseForm = document.getElementById('courseForm');
+const SubmissionForm = document.getElementById('courseForm1');
 
 
 
 
     // Add event listener for form submission
-    courseForm.addEventListener('submit', function (event) {
+    SubmissionForm.addEventListener('submit', function (event) {
         // Prevent the default form submission behavior
         event.preventDefault();
-
+        console.log("HEUFHFUIE");
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
               // User is signed in.
@@ -239,9 +443,10 @@ const courseForm = document.getElementById('courseForm');
                 submitter: user.email
                 
             };
+            console.log(courseData);
             addCourseSubmission(courseData).then(() => {
                 // Clear the form or show a success message after submission
-                courseForm.reset();
+                SubmissionForm.reset();
                 // Add any additional actions you want to perform after submission
             });
             } else {
@@ -255,7 +460,7 @@ const courseForm = document.getElementById('courseForm');
             };
             addCourseSubmission(courseData).then(() => {
                 // Clear the form or show a success message after submission
-                courseForm.reset();
+                SubmissionForm.reset();
                 // Add any additional actions you want to perform after submission
             });
             }
@@ -267,6 +472,8 @@ const courseForm = document.getElementById('courseForm');
     });
     
 });
+
+
 
 function loadUserProfiles(panelID) {
     const userProfiles = document.getElementById(panelID);
@@ -428,26 +635,21 @@ function selectProfile(profile, panelId) {
     
         }
         else{
-    if(prel1 === undefined)
-    {
-        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button>`;
-
-    }
-    if(prel2 === "N/A")
-    {
-        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button>`;
-
-    }
-    else if(prel3 === "N/A")
-    {
-        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button>`;
-
-    }
-    else
-    {
-        secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p><b>Prelim 3: ${prel3}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button>`;
-
-    }
+            if(prel2 === "N/A")
+            {
+                secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p><b>Section: ${section}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button><button id = "matchButton2" >add to schedule</button>`;
+        
+            }
+            else if(prel3 === "N/A")
+            {
+                secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p><b>Section: ${section}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Prelim 1: ${prel1}<b></p><p><b>Prelim 2: ${prel2}<b></p><p>Approximate Number of Students: ${numstudents}</p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button><button id = "matchButton2" >add to schedule</button>`;
+        
+            }
+            else
+            {
+                secondaryelement.innerHTML = `<h3 id = "cn">${course + ": " + name}</h3><p><b>Grade: ${grade}</b></p><p><b>Credits: ${credit}</b></p><p><b>Professor: ${professor}</b></p><p><b>Section: ${section}</b></p><p>Distribution: ${distribution}</p><p><b>Semester: ${semester}</b></p><p>Description: "${descript}"(Cornell University)</p><p><b>Approximate Number of Students: ${numstudents}</b></p><button id = "matchButton1" onclick="location.href='https://classes.cornell.edu/browse/roster/SP24/class/${coursefilterValue}/${course.substring(course.length-4)}'" >explore</button><button id = "matchButton2" >add to schedule</button>`;
+        
+            }
 
         }
       });
