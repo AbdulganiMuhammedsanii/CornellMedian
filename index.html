@@ -11,10 +11,53 @@
     
 </head>
 <body>
-    <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+    <!--new -- Login info -->
+    <div id="SignupInfo" class="modal" style="display: none;">
+        <div class="modal-content">
+            
+            <form id="logForm" onsubmit= "signup(event)">
+                <label for="courseName">First Name</label>
+                <input type="text" placeholder="first name"  id="fn" ><br><br>
+    
+                <label for="professor">Last Name:</label>
+                <input type="text" placeholder="last name"  id="ln" ><br><br>
+    
+                <label for="medianGrade">Email:</label>
+                <input type="text" placeholder="email"  id="em" ><br><br>
+    
+                <label for="semester">Password:</label>
+                <input type="password"  placeholder="password"  id="pas" ><br><br>
+    
+                <button id = "signupinp" value="Sign Up" class = "btn">Sign Up</button>
+
+                <button id = "matchButton4" onclick="loginmember(event)">
+                    Already A Member? <a>Login Here!</a>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginInfo" class="modal" style="display: none;">
+        <div class="modal-content">
+           
+            <form onsubmit= "signin(event)">
+                <div id="courseForm" class="container">
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="email"  id="ema" ><br><br>
+                    <label for="password">Password</label>
+                    <input type="password"  placeholder="password"  id="pass" ><br><br>
+                    <button id = "signupinv" value="Sign In" class = "btn">Sign In</button>
+                    <button id = "matchButton3" onclick="signupmember(event)">
+                        Not A Member? <a>Sign Up Here!</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
     <div class = 'toprow'>
         <div id = 'title'>CornellMedian</div>
     <div class = 'nav-button' id = "useracc"></div>
@@ -127,10 +170,12 @@
         </div>
     </div>
 
+    
+
     <div id="courseModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <form id="courseForm">
+            <form id="courseForm1">
                 <label for="courseName">Course Name:</label>
                 <input type="text" id="courseName" name="courseName"><br><br>
     
@@ -163,7 +208,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
 
-<script src="script.js"></script>
-<script src="submission.js"></script>
-</body>
+<script src="../Scripts/script.js"></script>
+<script src="../Scripts/submission.js"></script>
+</body> 
 </html>
