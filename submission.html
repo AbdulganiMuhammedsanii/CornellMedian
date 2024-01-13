@@ -11,6 +11,48 @@
     
 </head>
 <body>
+    <div id="SignupInfor" class="modal" style="display: none;">
+        <div class="modal-content">
+            
+            <form id="logForm" onsubmit= "signup(event)">
+                <label for="courseName">First Name</label>
+                <input type="text" placeholder="first name"  id="fn" ><br><br>
+    
+                <label for="professor">Last Name:</label>
+                <input type="text" placeholder="last name"  id="ln" ><br><br>
+    
+                <label for="medianGrade">Email:</label>
+                <input type="text" placeholder="email"  id="em" ><br><br>
+    
+                <label for="semester">Password:</label>
+                <input type="password"  placeholder="password"  id="pas" ><br><br>
+    
+                <button id = "signupinp" value="Sign Up" class = "btn">Sign Up</button>
+
+                <button id = "matchButton4" onclick="loginmember(event)">
+                    Already A Member? <a>Login Here!</a>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginInfor" class="modal" style="display: none;">
+        <div class="modal-content">
+           
+            <form onsubmit= "signin(event)">
+                <div id="courseForm" class="container">
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="email"  id="ema" ><br><br>
+                    <label for="password">Password</label>
+                    <input type="password"  placeholder="password"  id="pass" ><br><br>
+                    <button id = "signupinv" value="Sign In" class = "btn">Sign In</button>
+                    <button id = "matchButton3" onclick="signupmember(event)">
+                        Not A Member? <a>Sign Up Here!</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class = 'toprow'>
         <div id = 'title'>CornellMedian</div>
         <div  class = 'nav-button' id = "useracc"></div>
@@ -23,10 +65,10 @@
                 <button class='nav-button' id = 'submissions'>view schedule</button>
             </a>
             <a>
-            <button class='nav-button' id="signInWithGoogle">sign in</button>
+            <button class='nav-button' id="signInWithGoogler">sign in</button>
         </a>
-    <a>
-            <button class='nav-button' id="signOutButton">sign out</button>
+        <a>
+            <button class='nav-button' id="signOutButtonr">sign out</button>
         </a>
     </div>
     
@@ -52,6 +94,6 @@
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
 
-<script src="submission.js"></script>
+<script src="../Scripts/submission.js"></script>
 </body>
 </html>
