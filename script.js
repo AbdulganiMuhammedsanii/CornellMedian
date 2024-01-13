@@ -106,10 +106,10 @@ window.signin = function(e){
         modal.style.display = 'none';
     }, 500); // Delay must match the CSS transition duration
     var obj={
-        em:em.value,
-        pas:pas.value,
+        ema:ema.value,
+        pass:pass.value,
     }
-    auth.signInWithEmailAndPassword(obj.em, obj.pas)
+    auth.signInWithEmailAndPassword(obj.ema, obj.pass)
   .then((userCredential) => {
     // Signed in 
     var user = userCredential.user;
