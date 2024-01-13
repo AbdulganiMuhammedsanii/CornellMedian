@@ -42,38 +42,148 @@ firebase.initializeApp(firebaseConfig);
 // Get a reference to the database service
 var database = firebase.database();
 
-
-const signInWithGoogleButton = document.getElementById('signInWithGoogle')
+const signInWithGoogleButton = document.getElementById('signInWithGoogler')
 
 const auth = firebase.auth();
 
-const sigInWithGoogle = () => {
-const googleProvider = new firebase.auth.GoogleAuthProvider();
+var fn = document.getElementById('fn');
+var ln = document.getElementById('ln');
+var em = document.getElementById('em');
+var pas = document.getElementById('pas');
 
-auth.signInWithRedirect(googleProvider)
-.then(() => {
-  window.location.assign('./profile');
-})
-.catch(error => {
-  console.error(error);
-})
+// Sign up
+window.signup = function(e){
+    e.preventDefault();
+    const modal = document.getElementById('SignupInfor');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 500); // Delay must match the CSS transition duration
+    var obj={
+        fn:fn.value,
+        ln:ln.value,
+        em:em.value,
+        pas:pas.value,
+    }
+    auth.createUserWithEmailAndPassword(obj.em, obj.pas)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    user.updateProfile({
+        displayName: obj.fn + " " + obj.ln
+    }).then(function() {
+        // Update successful
+        console.log("Display Name Updated: ", user.displayName);
+    }).catch(function(error) {
+        // An error happened while updating the display name
+        console.error("Error updating display name: ", error);
+    });
+    //(user);
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+  //console.log(obj);
 }
 
-signInWithGoogleButton.addEventListener('click', sigInWithGoogle);
+var ema = document.getElementById('ema');
+var pass = document.getElementById('pass');
+
+//Sign In
+
+window.signin = function(e){
+    e.preventDefault();
+    const modal = document.getElementById('loginInfor');
+    modal.classList.remove('show');
+    setTimeout(() => { // Redirects to the homepage
+        modal.style.display = 'none';
+    }, 500); // Delay must match the CSS transition duration
+    var obj={
+        em:em.value,
+        pas:pas.value,
+    }
+    auth.signInWithEmailAndPassword(obj.em, obj.pas)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    //console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+  //console.log(obj);
+}
 
 
+window.loginmember = function(e){
+    e.preventDefault();
+    const modal = document.getElementById('SignupInfor');
+    const modal2 = document.getElementById('loginInfor');
+    modal.classList.remove('show');
+    console.log("hello");
+    setTimeout(() => { // Redirects to the homepage
+        modal.style.display = 'none';
+    }, 800); // Delay must match the CSS transition duration
+    modal2.classList.add('show');
+    modal2.style.display = 'flex'
+  //console.log(obj);
+}
+
+window.signupmember = function(e){
+    e.preventDefault();
+    const modal = document.getElementById('SignupInfor');
+    const modal2 = document.getElementById('loginInfor');
+    modal2.classList.remove('show');
+    console.log(modal);
+    setTimeout(() => { // Redirects to the homepage
+        modal2.style.display = 'none';
+    }, 800); // Delay must match the CSS transition duration
+    modal.classList.add('show');
+    modal.style.display = 'flex'
+  //console.log(obj);
+}
+
+
+
+const signInWithGoogle = () => {
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+  auth.signInWithPopup(googleProvider)
+  .then(() => {
+    window.location.assign('./');
+  })
+  .catch(error => {
+    console.error(error);
+  })
+}
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
+
+
     const use = document.getElementById('useracc');
     const useracc = document.createElement('div');
       useracc.classList.add('useraccount');
-      useracc.innerHTML = `<h3><b>Hi, ${user.displayName}<b><h3>`;
+      if(user.displayName)
+        {
+            useracc.innerHTML = `<h3><b>Hi, ${user.displayName}<b><h3>`;
+        }
+        else
+        {
+            delay(1000).then(() => useracc.innerHTML = `<h3><b>Hi, ${user.displayName}<b><h3>`);
+        }
+        
       use.appendChild(useracc)
 
-    document.getElementById('signOutButton').style.display = 'block';
-    document.getElementById('signInWithGoogle').style.display = 'none';
+    document.getElementById('signOutButtonr').style.display = 'block';
+    document.getElementById('signInWithGoogler').style.display = 'none';
     console.log("User is signed in");
     console.log("User ID: " + user.uid);
     console.log("User Name: " + user.displayName);
@@ -84,14 +194,13 @@ firebase.auth().onAuthStateChanged(function(user) {
     const use = document.getElementById('useracc');
     const useracc = document.createElement('div');
       useracc.classList.add('useraccount');
-      useracc.innerHTML = `<h3><b>Please Sign In<b><h3>`;
+      useracc.innerHTML = `<h3><b><b><h3>`;
       use.appendChild(useracc)
-    document.getElementById('signOutButton').style.display = 'none';
-    document.getElementById('signInWithGoogle').style.display = 'block';
+    document.getElementById('signOutButtonr').style.display = 'none';
+    document.getElementById('signInWithGoogler').style.display = 'block';
     console.log("No user is signed in");
   }
 });
-
 
 function signOutUser() {
   firebase.auth().signOut().then(function() {
@@ -105,8 +214,7 @@ function signOutUser() {
   });
 }
 
-document.getElementById('signOutButton').addEventListener('click', signOutUser);
-
+document.getElementById('signOutButtonr').addEventListener('click', signOutUser);
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -119,7 +227,115 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    function showModalWithFade(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.add('show');
+      modal.style.display = 'flex'
+  }
+  
+  // Function to hide modal with fade-out effect
+  function hideModalWithFade(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('show');
+      setTimeout(() => {
+          modal.style.display = 'none';
+      }, 500); // Delay must match the CSS transition duration
+  }
+  
 
+document.getElementById('courseForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+      console.log("HEUFHFUIE");
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            const courseData = {
+              courseName: document.getElementById('courseName').value,
+              professor: document.getElementById('professor').value,
+              medianGrade: document.getElementById('medianGrade').value,
+              semester: document.getElementById('semester').value,
+              submitter: user.email
+              
+          };
+          console.log(courseData);
+          addCourseSubmission(courseData).then(() => {
+              // Clear the form or show a success message after submission
+              SubmissionForm.reset();
+              // Add any additional actions you want to perform after submission
+          });
+          } else {
+            // No user is signed in.
+            const courseData = {
+              courseName: document.getElementById('courseName').value,
+              professor: document.getElementById('professor').value,
+              medianGrade: document.getElementById('medianGrade').value,
+              semester: document.getElementById('semester').value,
+              submitter: 'anonymous'
+          };
+          addCourseSubmission(courseData).then(() => {
+              // Clear the form or show a success message after submission
+              SubmissionForm.reset();
+              // Add any additional actions you want to perform after submission
+          });
+          }
+          // Add the course data to Firebase
+        });
+
+      // Get values from the form
+  // Hide the course submission modal
+  hideModalWithFade('courseModal');
+
+  // Show the submission message
+  showModalWithFade('submissionMessage');
+
+  // Hide the submission message after a delay
+  setTimeout(() => {
+      hideModalWithFade('submissionMessage');
+  }, 1500); // 3 seconds
+});
+
+document.getElementById('signInWithGoogler').addEventListener('click', function() {
+  console.log('here');
+  showModalWithFade('loginInfor');
+});
+
+document.getElementById('not yet').addEventListender('click', function()
+{
+  console.log("REREEE");
+  hideModelWithFade('loginInfor');
+  showModalWithFade('SignupInfor');
+})
+
+document.getElementById('already').addEventListender('click', function()
+{
+  hideModelWithFade('SignupInfor');
+  showModalWithFade('loginInfor');
+})
+
+// Modify the form submission event listener
+document.getElementById('signInWithGoogler').addEventListener('Sign Up', function(event) {
+  event.preventDefault();
+
+  // Hide the course submission modal
+  hideModalWithFade('SignupInfor');
+
+  // Show the submission message
+  showModalWithFade('submissionMessage');
+
+  // Hide the submission message after a delay
+  setTimeout(() => {
+      hideModalWithFade('submissionMessage');
+  }, 1500); // 3 seconds
+});
+
+document.getElementById('signInWithGoogler').addEventListener('Sign In', function(event) {
+  event.preventDefault();
+  // Hide the course submission modal
+  hideModalWithFade('loginInfor');
+
+  // Show the submission message
+  // Hide the submission message after a delay
+});
   
   // Function to show modal with fade-in effect
   // Function to show modal with fade-in effect
